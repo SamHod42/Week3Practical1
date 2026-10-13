@@ -1,7 +1,4 @@
-let circleX = 20;
-let circleY = 20;
-let circleW = 40;
-let g, b;
+
 
 function setup() {
     frameRate(30);
@@ -11,13 +8,17 @@ function setup() {
     g = random(10, 255);
     b = random(255);
 }
+let circleX = 20;
+let circleY = 20;
+let circleW = 40;
+let g, b;
 
 function draw() {
     fill(0, g, b);
     circle(circleX, circleY, circleW);
-    if (circleX === width - cricleW / 2) {
+    if (circleX === width - circleW / 2) {
         circleY = (circleY + circleW) % height;
     }
-    circleX = circleX + circleW % width;
+    circleX = (circleX + circleW) % width;
     b = (b + 1) % 255;
 }
